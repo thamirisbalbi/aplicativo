@@ -33,6 +33,15 @@ export default function Detail() {
                 <Text style={styles.heroTitle}>Seja o herói desse caso.</Text>
 
                 <Text style={styles.heroDescription}>Entre em contato:</Text>
+                <View style={styles.actions}>
+                    <TouchableOpacity style={styles.action} onPress={() => {}}>
+                        <Text style={styles.actionText}>WhatsApp</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.action} onPress={() => {}}>
+                        <Text style={styles.actionText}>E-mail</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
         </View>
