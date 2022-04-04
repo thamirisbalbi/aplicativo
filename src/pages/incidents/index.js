@@ -21,6 +21,7 @@ export default function Incidents() {
 
             <FlatList 
                 data={{1, 2, 3}}
+                style={styles.incidentList}
                 renderItem={() => (
                     <View style={styles.incident}>
                         <Text style={styles.incidentProperty}>ONG:</Text>
@@ -43,7 +44,7 @@ export default function Incidents() {
                 )}
             />
 
-            <View style={styles.incidentList}>
+            <View >
 
                 <View style={styles.incident}>
                     <Text style={styles.incidentProperty}>ONG:</Text>
