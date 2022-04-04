@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 
 import logoimg from '../../assets/logo.png'; //passa automaticamente a logo que se adequa a tela que roda a aplicação
 
@@ -28,6 +28,13 @@ export default function Incidents() {
 
                     <Text style={styles.incidentProperty}>VALOR:</Text>
                     <Text style={styles.incidentValue}>R$ 120,00</Text>
+
+                    <TouchableOpacity 
+                    style={styles.detailsButton} 
+                    onPress={() => {}}
+                    >
+                        <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
