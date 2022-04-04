@@ -39,5 +39,12 @@ export default StyleSheet.create({
         borderRadius: 8,
         backgroundColor: '#FFF',
         margimBottom: 16,
-    }
+    },
+
+    heroTitle: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: '#13131a',
+        lineHeight: 30, //distancia do texto de baixo
+    },
 });
