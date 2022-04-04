@@ -22,6 +22,7 @@ export default function Incidents() {
             <FlatList 
                 data={[1, 2, 3]}
                 style={styles.incidentList}
+                keyExtractor={incident => String(incident)}
                 renderItem={() => (
                     <View style={styles.incident}>
                         <Text style={styles.incidentProperty}>ONG:</Text>
