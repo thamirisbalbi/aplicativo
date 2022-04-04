@@ -1,6 +1,6 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
-import { View, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import logoimg from '../../assets/logo.png';
 
@@ -26,6 +26,13 @@ export default function Detail() {
 
                 <Text style={styles.incidentProperty}>VALOR:</Text>
                 <Text style={styles.incidentValue}>R$ 120,00</Text>
+            </View>
+
+            <View style={styles.contactBox}>
+                <Text style={styles.heroTitle}>Salve o dia!</Text>
+                <Text style={styles.heroTitle}>Seja o herói desse caso.</Text>
+
+                <Text style={styles.heroDescription}>Entre em contato:</Text>
             </View>
 
         </View>
