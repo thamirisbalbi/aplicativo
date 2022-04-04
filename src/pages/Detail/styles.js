@@ -53,5 +53,9 @@ export default StyleSheet.create({
         color: '#737380',
         marginTop: 16,
     },
-    
+    actions: {
+        marginTop: 16,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
 });
