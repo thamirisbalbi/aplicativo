@@ -30,6 +30,12 @@ export default StyleSheet.create({
         marginTop: 48,
         color: '#13131a',
         fontWeight: 'bold'
-    }
+    },
+
+    description: {
+        fontSize: 16,
+        lineHeight: 24,
+        color: '#737380'
+    },
 
 });
