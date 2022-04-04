@@ -22,5 +22,14 @@ export default StyleSheet.create({
 
     headerTextBold: {
         fontWeight: 'bold'
+    },
+
+    title: {
+        fontSize: 30,
+        marginBottom: 16,
+        marginTop: 48,
+        color: '#13131a',
+        fontWeight: 'bold'
     }
+
 });
