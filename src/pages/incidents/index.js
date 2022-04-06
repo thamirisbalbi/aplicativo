@@ -44,16 +44,16 @@ export default function Incidents() {
                 style={styles.incidentList}
                 keyExtractor={incident => String(incident.id)} //retorna apenas id por conter um objeto em data 
                 showsVerticalScrollIndicator={false}
-                renderItem={() => (
+                renderItem={( { item: incident } ) => ( //pega um atributo de renderItem (item) e esclarece que é a mesma coisa que incident na aplicação: ela conterá os dados mandados da api 
                     <View style={styles.incident}>
                         <Text style={styles.incidentProperty}>ONG:</Text>
-                        <Text style={styles.incidentValue}>APAD</Text>
+                        <Text style={styles.incidentValue}>{incident.name}</Text>
 
                         <Text style={styles.incidentProperty}>CASO:</Text>
-                        <Text style={styles.incidentValue}>Cadelinha atropelada</Text>
+                        <Text style={styles.incidentValue}>{incident.title}</Text>
 
                         <Text style={styles.incidentProperty}>VALOR:</Text>
-                        <Text style={styles.incidentValue}>R$ 120,00</Text>
+                        <Text style={styles.incidentValue}>{incident.value}</Text>
 
                         <TouchableOpacity 
                             style={styles.detailsButton} 
