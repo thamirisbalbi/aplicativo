@@ -38,7 +38,7 @@ export default StyleSheet.create({
         padding: 24, 
         borderRadius: 8,
         backgroundColor: '#FFF',
-        margimBottom: 16,
+        marginBottom: 16,
     },
 
     heroTitle: {

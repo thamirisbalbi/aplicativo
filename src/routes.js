@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import {} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-const AppStack = createStackNavigator(); //primeira navegação criada
+const AppStack = createNativeStackNavigator(); //primeira navegação criada
 
-import Incidents from './pages/incidents';
+import Incidents from './pages/Incidents';
 import Detail from './pages/Detail';
 
 export default function Routes() {

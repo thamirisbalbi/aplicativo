@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import { Constants } from "expo-constants"; //importa informações fixas para cada projeto
+import  Constants  from "expo-constants"; //importa informações fixas para cada projeto
 
 export default StyleSheet.create({
     container: {
         flex: 1, //aplicação ocupa tamanho inteiro
-        paddingHotizontal: 24, //quero fazer um padding nas laterais
+        paddingHorizontal: 24, //quero fazer um padding nas laterais
         paddingTop: Constants.statusBarHeight + 20, //tamanho da status bar para ela ficar mais abaixo da tela
 
     },
