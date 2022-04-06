@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+
+import api from '../../services/api';
 
 import logoimg from '../../assets/logo.png'; //passa automaticamente a logo que se adequa a tela que roda a aplicação
 
@@ -13,6 +15,16 @@ export default function Incidents() {
     function navigateToDetail() {
         navigation.navigate('Detail');
     }
+
+    async function loadIncidents() {
+        const response = await api.get('/incidents'); //api pegando rota incidents
+    
+    
+    } //cria função fora do useEffect para depois ser usada nele
+
+    useEffect(() => {
+        loadIncidents();
+    }, [])
 
     return (
         <View style={styles.container}>
