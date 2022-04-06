@@ -10,6 +10,7 @@ import logoimg from '../../assets/logo.png'; //passa automaticamente a logo que 
 import styles from './styles';
 
 export default function Incidents() {
+    const [incidents, setIncidents] = useState([]);
     const navigation = useNavigation();
 
     function navigateToDetail() {
