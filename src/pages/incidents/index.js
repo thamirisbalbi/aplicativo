@@ -40,9 +40,9 @@ export default function Incidents() {
             <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia!</Text>
 
             <FlatList 
-                data={[1, 2, 3]}
+                data={incidents}
                 style={styles.incidentList}
-                keyExtractor={incident => String(incident)}
+                keyExtractor={incident => String(incident.id)} //retorna apenas id por conter um objeto em data 
                 showsVerticalScrollIndicator={false}
                 renderItem={() => (
                     <View style={styles.incident}>
