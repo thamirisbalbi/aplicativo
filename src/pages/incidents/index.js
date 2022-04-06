@@ -20,7 +20,7 @@ export default function Incidents() {
     async function loadIncidents() {
         const response = await api.get('/incidents'); //api pegando rota incidents
     
-    
+        setIncidents(response.data); //data seria onde estão os dados vindos da api. 
     } //cria função fora do useEffect para depois ser usada nele
 
     useEffect(() => {
