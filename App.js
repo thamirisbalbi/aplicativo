@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR'; //importando o português da internacionalização.
 
 import React from 'react';
 
