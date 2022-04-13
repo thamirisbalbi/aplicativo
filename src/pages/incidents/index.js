@@ -12,6 +12,7 @@ import styles from './styles';
 export default function Incidents() {
     const [incidents, setIncidents] = useState([]);
     const navigation = useNavigation();
+    const [total, setTotal] = useState(0); //armazena total de itens. Usestate inicia com ototal de zero itens. 
 
     function navigateToDetail() {
         navigation.navigate('Detail');
@@ -21,6 +22,7 @@ export default function Incidents() {
         const response = await api.get('/incidents'); //api pegando rota incidents
     
         setIncidents(response.data); //data seria onde estão os dados vindos da api. 
+        setTotal(response.headers['x-total-count']);
     } //cria função fora do useEffect para depois ser usada nele
 
     useEffect(() => {
