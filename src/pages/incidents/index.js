@@ -14,8 +14,8 @@ export default function Incidents() {
     const navigation = useNavigation();
     const [total, setTotal] = useState(0); //armazena total de itens. Usestate inicia com ototal de zero itens. 
 
-    function navigateToDetail() {
-        navigation.navigate('Detail');
+    function navigateToDetail(incident) {
+        navigation.navigate('Detail', { incident }); //segundo parâmetro é a informação que se quer passar para a página Detail
     }
 
     async function loadIncidents() {
@@ -64,7 +64,7 @@ export default function Incidents() {
 
                         <TouchableOpacity 
                             style={styles.detailsButton} 
-                            onPress={navigateToDetail}
+                            onPress={() => navigateToDetail(incident)} //não é possível colocar incident direto, se não será executado assim que for exibido em tela. É preciso sempre executar uma função(arrow function), em vez do valor de uma função. 
                         >
                             <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
                             <Feather name='arrow-right' size={16} color="#E02041" />
