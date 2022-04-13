@@ -13,7 +13,7 @@ export default function Detail() {
     const route = useRoute();
 
     const incident = route.params.incident; //acesso a todos os parâmetros de routes, e acessando especificamente o parâmetro incidents.
-    const message = `Olá APAD. Estou entrando em contato pois gostaria de ajudar no caso "Cadelinha atropelada" com o valor de R$120,00`;
+    const message = `Olá ${incident.name}. Estou entrando em contato pois gostaria de ajudar no caso "${incident.title}" com o valor de ${Intl.NumberFormat( 'pt-BR', { style: 'currency', currency: 'BRL'}).format(incident.value)}`;
 
     function navigateBack() {
         navigation.goBack();
@@ -21,8 +21,8 @@ export default function Detail() {
 
     function sendMail() {
         MailComposer.composeAsync({
-            subject: 'Herói do caso: Cadelinha atropelada',
-            recipients: ['diego@rocketseat.com.br'], //a quem será enviado o email
+            subject: `Herói do caso: ${incident.title}`, //coloca entre crases para ser possível a utilização de variáveis
+            recipients: [incident.email], //a quem será enviado o email
             body: message,
         })
     }
