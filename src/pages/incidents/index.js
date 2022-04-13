@@ -13,16 +13,31 @@ export default function Incidents() {
     const [incidents, setIncidents] = useState([]);
     const navigation = useNavigation();
     const [total, setTotal] = useState(0); //armazena total de itens. Usestate inicia com ototal de zero itens. 
+    
+    const [page, setPage] = useState(1); //inicia na página 1
+    const [loading, setLoading] = useState(false); //evita que os dados sejam carregados novamente: aplicação carregará uma página por vez
 
     function navigateToDetail(incident) {
         navigation.navigate('Detail', { incident }); //segundo parâmetro é a informação que se quer passar para a página Detail
     }
 
     async function loadIncidents() {
+        if (loading) { //se estiver carregando
+            return; 
+        } //evita que outra requisição aconteça enquanto uma já está sendo feita 
+
+        if (total > 0 && incidents.length == total ) { //total de registros no banco de dados
+            return;
+        } //não busca mais informações caso já tenha carregado todas
+
+        setLoading(true); //else
+
         const response = await api.get('/incidents'); //api pegando rota incidents
     
         setIncidents(response.data); //data seria onde estão os dados vindos da api. 
         setTotal(response.headers['x-total-count']);
+        setPage(page + 1);
+        setLoading(false);
     } //cria função fora do useEffect para depois ser usada nele
 
     useEffect(() => {
