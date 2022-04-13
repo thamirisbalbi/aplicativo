@@ -32,7 +32,9 @@ export default function Incidents() {
 
         setLoading(true); //else
 
-        const response = await api.get('/incidents'); //api pegando rota incidents
+        const response = await api.get('incidents', {
+            params: { page } //passa como parâmetro o número da página p/ ser possível a rolagem infinita de casos
+        } ); //api pegando rota incidents
     
         setIncidents([...incidents, ...response.data]); //forma de anexar os vetores
         //data seria onde estão os dados vindos da api. 
