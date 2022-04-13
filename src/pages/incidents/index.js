@@ -34,7 +34,8 @@ export default function Incidents() {
 
         const response = await api.get('/incidents'); //api pegando rota incidents
     
-        setIncidents(response.data); //data seria onde estão os dados vindos da api. 
+        setIncidents([...incidents, ...response.data]); //forma de anexar os vetores
+        //data seria onde estão os dados vindos da api. 
         setTotal(response.headers['x-total-count']);
         setPage(page + 1);
         setLoading(false);
@@ -61,6 +62,8 @@ export default function Incidents() {
                 style={styles.incidentList}
                 keyExtractor={incident => String(incident.id)} //retorna apenas id por conter um objeto em data 
                 showsVerticalScrollIndicator={false}
+                onEndReached={loadIncidents} //aceita função disparada de forma automática quando o usuário chegar ao final da lista
+                onEndReachedThreshold={0.2} //indica quantos porcento ao fim da lista o usuário precisa estar para carregar novos itens (nesse caso, precisa estar 20% no final da lista)
                 renderItem={( { item: incident } ) => ( //pega um atributo de renderItem (item) e esclarece que é a mesma coisa que incident na aplicação: ela conterá os dados mandados da api 
                     <View style={styles.incident}>
                         <Text style={styles.incidentProperty}>ONG:</Text>
